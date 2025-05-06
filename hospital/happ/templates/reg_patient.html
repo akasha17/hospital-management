@@ -1,0 +1,116 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 2x;
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-box{
+            right: -235px;
+            position: relative;
+            color: white;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+      <h4 class="form-title">
+        BOOK <span>APPOINTMENT</span>
+      </h4>
+        <form action="reg_patient" method="POST">
+            {% csrf_token %}
+            <label for="dep">Choose Department:</label>
+                <select name="dep" class="form-control wide" id="dep">
+                {% for i in x1 %}
+                <option value="{{i.id}}">{{i.dep_name}}</option>
+                {% endfor %}
+            </select> <br>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" class="form-control" id="firstname" name="fname" placeholder="Enter first name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" class="form-control" id="lastname" name="lname" placeholder="Enter last name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="Enter age" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+            </div>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="">Female</label><br>
+                <input type="submit" value="REGISTER" class="btn-box">
+                </div>
+            
+        </form>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
